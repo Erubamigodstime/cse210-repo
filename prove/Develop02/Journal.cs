@@ -29,7 +29,8 @@ class Journal
         {
             foreach (Entry entry in _entryList)
                 {
-                
+                    
+                    outputFile.WriteLine(entry._time);
                     outputFile.WriteLine(entry._Date);
                     outputFile.WriteLine(entry._Prompt);
                     outputFile.WriteLine(entry._Response);
@@ -37,6 +38,9 @@ class Journal
 
 
         }
+        Console.WriteLine("");
+        Console.WriteLine("Your data has been saved");
+        Console.WriteLine(" ");
            
     }
     
@@ -46,10 +50,14 @@ class Journal
         Console.WriteLine("Enter the file name");
         string filename = Console.ReadLine();
         StreamReader sw = new StreamReader(filename);
+        Console.WriteLine(" ");
         while (sw.ReadLine() is string s )
         {
+            
             Console.WriteLine(s);
+           
         }
+        Console.WriteLine(" ");
         // // StreamReader reader  = new StreamReader(filename);
         // data = reader.ReadLine();
         // string [] data = File.ReadAllLines(filename);
